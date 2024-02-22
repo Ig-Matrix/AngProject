@@ -1,5 +1,28 @@
-<div class="container">
-    <form action="">
-        
-    </form>
+<div class="questionairre  p-4 bg-slate-300">
+    <div class=" container">
+        <div class="w-1/2 mx-auto bg-white rounded-sm shadow-lg text-center p-6">
+            <h2 class="font-medium font-mono ">Question {{currentQuestion + 1}} of {{questions.length}} </h2>
+            <p class="font-bold  my-2">@if (questions[currentQuestion]) {
+                {{questions[currentQuestion].text}}
+                }
+            </p>
+            <form [formGroup]="myForm" class="p-4">
+                @for (option of questions[currentQuestion].options; track currentQuestion) {
+                <label for="option-{{ currentQuestion }}" >
+                    <input class="mb-2" type="radio" id="option-{{ currentQuestion }}" name="question{{ currentQuestion }}"
+                        formControlName="question{{ currentQuestion }}" value="{{ option.value }}" />
+                    {{ option.label }}
+                </label>
+                }
+            </form>
+            <div class="buttons flex justify-between">
+                @if (currentQuestion > 0){<button class="p-4 rounded-sm bg-blue-700 text-slate-100 "
+                    (click)="previousQuestion()">Prev</button>}
+                @if (currentQuestion < questions.length - 1) {<button class="p-4 rounded-sm bg-blue-700 text-slate-100"
+                    (click)="nextQuestion()">Next</button>}
+            </div>
+            @if (currentQuestion === questions.length - 1) { <button class="p-4 rounded-sm bg-blue-700 text-slate-100"
+                (click)="submitForm()">Submit</button>}
+        </div>
+    </div>
 </div>
