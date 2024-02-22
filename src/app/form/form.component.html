@@ -8,9 +8,8 @@
             </p>
             <form [formGroup]="myForm" class="p-4 grid ">
                 @for (option of questions[currentQuestion].options; track option.label) {
-
-                <label class="text-start" for="option-{{ currentQuestion }}" >
-                    <input class="mb-2 text-start" type="radio" id="option-{{ currentQuestion }}" name="question{{ currentQuestion }}"
+                <label class="text-start" for="option-{{ option.value }}">
+                    <input class="mb-2 text-start" type="radio" id="option-{{ option.value }}" name="question{{ currentQuestion }}"
                         formControlName="question{{ currentQuestion }}" value="{{ option.value }}" />
                     {{ option.label }}
                 </label>
