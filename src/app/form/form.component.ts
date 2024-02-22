@@ -7,7 +7,6 @@ interface Option {
 }
 
 interface Question {
-  id: number;
   text: string;
   options: Option[];
 }
@@ -22,7 +21,6 @@ interface Question {
 export class FormComponent {
   questions: Question[] = [
     {
-      id:1,
       text: "What is your age range?",
       options: [
         { label: "Under 25", value: "under25" },
@@ -33,7 +31,6 @@ export class FormComponent {
       ]
     },
     {
-      id:2,
       text: "How would you describe your investment knowledge?",
       options: [
         { label: "Beginner", value: "Beginner" },
@@ -42,7 +39,6 @@ export class FormComponent {
       ]
     },
     {
-      id:3,
       text: "What is your primary investment goal?",
       options: [
         { label: "Capital preservation", value: "CapitalPreservation" },
@@ -51,7 +47,6 @@ export class FormComponent {
       ]
     },
     {
-      id:4,
       text: "How would you react to a significant decline in the value of your investment portfolio?",
       options: [
         { label: "Sell all investments", value: "sellAll" },
@@ -61,7 +56,6 @@ export class FormComponent {
       ]
     },
     {
-      id:5,
       text: "What is your time horizon for this investment?",
       options: [
         { label: "Less than 1 year", value: "LessThanOne" },
@@ -72,7 +66,6 @@ export class FormComponent {
       ]
     },
     {
-      id:6,
       text: "What percentage of your total investments are you comfortable allocating to high-risk assets (e.g., stocks)?",
       options: [
         { label: "0-20%", value: "0-20%" },
@@ -83,7 +76,6 @@ export class FormComponent {
       ]
     },
     {
-      id:7,
       text: "Do you have any specific preferences for types of investments? (e.g., stocks, bonds, Exchange-Traded Fund - ETFs)?",
       options: [
         { label: "Yes", value: "Yes" },
@@ -91,7 +83,6 @@ export class FormComponent {
       ]
     },
     {
-      id:8,
       text: "If answer to Question 7 is Yes, please specify",
       options: [
         { label: "Stocks", value: "Stocks" },
@@ -100,7 +91,6 @@ export class FormComponent {
       ]
     },
     {
-      id:9,
       text: "How do you feel about the possibility of losing some or all of your investment principal in exchange for potentially higher returns?",
       options: [
         { label: "Extremely uncomfortable", value: "ExtremelyUncomfortable" },
@@ -111,7 +101,6 @@ export class FormComponent {
       ]
     },
     {
-      id:10,
       text: "Have you experienced any major life events recently that could impact your financial goals or risk tolerance?",
       options: [
         { label: "Yes (e.g., marriage, divorce, birth of a child, job change)", value: "Yes" },

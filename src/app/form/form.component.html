@@ -1,4 +1,4 @@
-<div class="questionairre  p-4 bg-slate-300">
+<div class="questionairre h-screen p-4 bg-slate-300">
     <div class=" container">
         <div class="w-1/2 mx-auto bg-white rounded-sm shadow-lg text-center p-6">
             <h2 class="font-medium font-mono ">Question {{currentQuestion + 1}} of {{questions.length}} </h2>
@@ -6,10 +6,11 @@
                 {{questions[currentQuestion].text}}
                 }
             </p>
-            <form [formGroup]="myForm" class="p-4">
-                @for (option of questions[currentQuestion].options; track currentQuestion) {
-                <label for="option-{{ currentQuestion }}" >
-                    <input class="mb-2" type="radio" id="option-{{ currentQuestion }}" name="question{{ currentQuestion }}"
+            <form [formGroup]="myForm" class="p-4 grid ">
+                @for (option of questions[currentQuestion].options; track option.label) {
+
+                <label class="text-start" for="option-{{ currentQuestion }}" >
+                    <input class="mb-2 text-start" type="radio" id="option-{{ currentQuestion }}" name="question{{ currentQuestion }}"
                         formControlName="question{{ currentQuestion }}" value="{{ option.value }}" />
                     {{ option.label }}
                 </label>
